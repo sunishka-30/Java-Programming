@@ -35,7 +35,7 @@ class Cylinder
         return 3.142*radius*radius*height;
     }
 }
-public class CylinderClass {
+public class cc {
     public static void main(String[] args) {
         Cylinder cyl = new Cylinder(9,12);
         //cyl.setHeight(12);
