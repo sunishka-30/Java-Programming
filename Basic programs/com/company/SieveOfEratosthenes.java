@@ -21,10 +21,14 @@ public class SieveOfEratosthenes {
         arr[1]=false;
         for(int i=2;i*i<=m;i++)
         {
-            for(int j=2*i;j<=m;j+=i)
+            if(arr[i])
             {
+                
+              for(int j=i*i;j<=m;j+=i)
+              {
                 arr[j]=false;
 
+              }
             }
         }
         System.out.println("The prime no.s till "+m+" are:");
