@@ -10,10 +10,10 @@ public class SieveOfEratosthenes {
         System.out.println("Enter range to check prime numbers:");
 
         int m = sc.nextInt();
-        sieve(m);
+        isPrime(m);
 
     }
-    static void sieve( int m)
+    static void isPrime( int m)
     {
         boolean [] arr = new boolean[m+1];
         Arrays.fill(arr,true);
@@ -21,16 +21,11 @@ public class SieveOfEratosthenes {
         arr[1]=false;
         for(int i=2;i*i<=m;i++)
         {
-            if(arr[i])
+            for(int j=2*i;j<=m;j+=i)
             {
-                for(int j=i*i;j<=m;j+=i)
-                {
-                    arr[j]=false;
-
-                }
+                arr[j]=false;
 
             }
-
         }
         System.out.println("The prime no.s till "+m+" are:");
         for (int i = 2; i <= m; i++)
